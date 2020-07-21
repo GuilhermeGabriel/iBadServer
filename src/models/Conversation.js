@@ -1,21 +1,23 @@
 const { Schema, model } = require('mongoose');
 
 const ConversationSchema = new Schema({
-  users: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  },
+  users: [{
+    type: String,
+    required: true
+  }],
   messages: [{
-    msg: {
+    message: {
       type: String,
       required: true,
     },
     user: {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
+      type: String,
+      required: true,
+    },
+    timestamp: {
+      type: Date,
+      default: Date.now
     }
-  }, {
-    timestamps: true
   }]
 }, {
   timestamps: true

@@ -29,6 +29,6 @@ module.exports = {
         { $inc: { 'likes': 1 }, });
     }
 
-    return res.json({ a: userLiked });
+    return res.json(postModified);
   }
 }

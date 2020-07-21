@@ -4,7 +4,7 @@ const routes = express.Router();
 const UsersControllers = require('./controllers/UsersControllers');
 const PostsControllers = require('./controllers/PostsControllers');
 const LikesControllers = require('./controllers/LikesController');
-//const ConversationsControllers = require('./controllers/ConversationsControllers');
+const MessagesControllers = require('./controllers/MessagesControllers');
 
 //Users
 routes.post('/users', UsersControllers.store);
@@ -16,9 +16,8 @@ routes.post('/posts', PostsControllers.store);
 //Likes
 routes.post('/posts/like', LikesControllers.store);
 
-//Conversations
-//routes.post('/conversation', ConversationsControllers.store);
-//routes.post('/conversation/send/:idConversation', MessagesControllers.store);
-//obter as msg
+//Messages
+routes.post('/messages', MessagesControllers.store);
+routes.get('/messages', MessagesControllers.index);
 
 module.exports = routes;
