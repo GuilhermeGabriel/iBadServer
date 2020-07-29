@@ -23,14 +23,14 @@ module.exports = {
   },
   async index(req, res) {
     const { type, lastDateRaw } = req.query;
-    const lastDate = lastDateRaw ? lastDateRaw.split('/')[1] : undefined;
+    const lastDate = lastDateRaw;
 
     if (lastDateRaw) {
       if (type === 'todos') {
         const posts = await Post
           .find({ createdAt: { $lt: new Date(lastDate) } })
           .sort({ createdAt: -1 })
-          .limit(5);
+          .limit(10);
         return res.json(posts);
       } else {
         const posts = await Post
@@ -39,7 +39,7 @@ module.exports = {
             createdAt: { $lt: new Date(lastDate) }
           })
           .sort({ createdAt: -1 })
-          .limit(5);
+          .limit(10);
         return res.json(posts);
       }
     } else {
@@ -47,13 +47,13 @@ module.exports = {
         const posts = await Post
           .find({})
           .sort({ createdAt: -1 })
-          .limit(5);
+          .limit(10);
         return res.json(posts);
       } else {
         const posts = await Post
           .find({ type })
           .sort({ createdAt: -1 })
-          .limit(5);
+          .limit(10);
         return res.json(posts);
       }
     }
