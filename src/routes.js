@@ -8,7 +8,7 @@ const Conversations = require('./controllers/ConversationsControllers');
 const MessagesControllers = require('./controllers/MessagesControllers');
 
 //Test
-routes.get('test', (req, res) => {
+routes.get('/test', (req, res) => {
   return res.json({ ok: true });
 })
 
