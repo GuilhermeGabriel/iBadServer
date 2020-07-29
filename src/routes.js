@@ -7,6 +7,11 @@ const LikesControllers = require('./controllers/LikesController');
 const Conversations = require('./controllers/ConversationsControllers');
 const MessagesControllers = require('./controllers/MessagesControllers');
 
+//Test
+routes.get('test', (req, res) => {
+  return res.json({ ok: true });
+})
+
 //Users
 routes.post('/users', UsersControllers.store);
 
