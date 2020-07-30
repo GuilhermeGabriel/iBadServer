@@ -10,7 +10,7 @@ const MessagesControllers = require('./controllers/MessagesControllers');
 //Test
 routes.get('/test', (req, res) => {
   return res.json({ ok: true });
-})
+});
 
 //Users
 routes.post('/users', UsersControllers.store);

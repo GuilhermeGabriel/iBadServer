@@ -3,11 +3,17 @@ const app = express();
 const cors = require('cors');
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://gui:12345@cluster0.xxvrl.mongodb.net/ibad?retryWrites=true&w=majority', {
+mongoose.connect('mongodb://localhost/test', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
-})
+});
+
+/*mongoose.connect('mongodb+srv://gui:12345@cluster0.xxvrl.mongodb.net/ibad?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false
+})*/
 
 const routes = require('./routes');
 
