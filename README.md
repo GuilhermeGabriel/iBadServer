@@ -1,6 +1,6 @@
 # iBadServer
 
-#Run
+## Run
 ```
 //Clone o repositório
 git clone git@github.com:GuilhermeGabriel/iBadServer.git
